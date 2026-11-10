@@ -24,6 +24,9 @@ function Exemplo({ voltar }) {
             <p>
                 Para isso, utilizamos um vetor de dependências vazio.
             </p>
+            <p>
+                Isso indica ao React que o efeito será executado apenas uma vez.
+            </p>
         </>
     );
 
