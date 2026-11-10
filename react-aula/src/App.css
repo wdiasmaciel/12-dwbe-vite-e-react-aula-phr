@@ -24,8 +24,14 @@
 
 .carregando {
   color: red;
+  background-color: #f2dede;
+  padding: 1rem;
+  border-radius: 0.3rem;
 }
 
 .carregados {
   color: green;
+  background-color: #dff0d8;
+  padding: 1rem;
+  border-radius: 0.3rem;
 }
