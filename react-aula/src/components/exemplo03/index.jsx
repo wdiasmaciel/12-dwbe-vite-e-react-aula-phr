@@ -15,6 +15,8 @@ function Exemplo({ voltar }) {
             <button className="botao" type="button" onClick={voltar}>
                 Voltar para App
             </button>
+
+            <h1>Exemplo 03</h1>
             
             <h1>{contador}</h1>
             
@@ -23,6 +25,7 @@ function Exemplo({ voltar }) {
             >
                 Incrementar
             </button>
+            
             <p>
                 Sempre que o valor do contador for alterado,
                 a mensagem aparecerá no console.

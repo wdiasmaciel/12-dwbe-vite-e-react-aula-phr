@@ -19,6 +19,8 @@ function Exemplo({ voltar }) {
                 Voltar para App
             </button>
 
+            <h1>Exemplo 09</h1>
+
             <h1>Sistema de Produtos</h1>
 
             <h2 className="carregados">Valor: {valor}</h2>

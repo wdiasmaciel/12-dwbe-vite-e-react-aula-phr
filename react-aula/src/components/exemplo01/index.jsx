@@ -12,6 +12,9 @@ function Exemplo({ voltar }) {
             <button className="botao" type="button" onClick={voltar}>
                 Voltar para App
             </button>
+
+            <h1>Exemplo 01</h1>
+
             <h1>Sistema de Produtos</h1>
 
             <p>Sempre que o componente for renderizado (montado),

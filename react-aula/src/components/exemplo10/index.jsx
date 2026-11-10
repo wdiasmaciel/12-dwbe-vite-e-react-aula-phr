@@ -34,6 +34,8 @@ function Exemplo({ voltar}) {
                 Voltar para App
             </button>
 
+            <h1>Exemplo 10</h1>
+
             <h1>Sistema de Produtos</h1>
 
             {carregando ? <h2 className="carregando">Carregando...</h2> : <h2 className="carregados">Produtos carregados.</h2>}
