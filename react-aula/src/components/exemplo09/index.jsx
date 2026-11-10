@@ -7,7 +7,6 @@ function Exemplo({ voltar }) {
     useEffect(() => {
         console.log("Valor: ", valor);
         // Atualização intencional para demonstrar o loop infinito.
-        // eslint-disable-next-line react-hooks/set-state-in-effect
         setValor(valor => valor + 1);
         return () => {
             console.log("Componente desmontado.");
