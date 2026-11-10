@@ -19,7 +19,7 @@ function Exemplo({ voltar }) {
 
             <h1>Sistema de Produtos</h1>
 
-            <h2 class="carregados">Segundos: {segundos}</h2>
+            <h2 className="carregados">Segundos: {segundos}</h2>
 
             <p>
                 O `return` dentro do `useEffect()` não renderiza JSX.

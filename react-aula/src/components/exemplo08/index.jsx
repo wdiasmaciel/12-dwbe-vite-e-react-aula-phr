@@ -44,9 +44,9 @@ function Exemplo({ voltar }) {
                 a mensagem aparecerá no console.
             </p>
 
-            <h2 class="carregados">Nome: {nome}</h2>
-            <h2 class="carregados">Preço: {preco}</h2>
-            <h2 class="carregados">Estoque: {estoque}</h2>
+            <h2 className="carregados">Nome: {nome}</h2>
+            <h2 className="carregados">Preço: {preco}</h2>
+            <h2 className="carregados">Estoque: {estoque}</h2>
 
             <p>
                 Também podemos observar diversas variáveis.

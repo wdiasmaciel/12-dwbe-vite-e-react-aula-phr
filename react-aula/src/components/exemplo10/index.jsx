@@ -36,7 +36,7 @@ function Exemplo({ voltar}) {
 
             <h1>Sistema de Produtos</h1>
 
-            {carregando ? <h2 class="carregando">Carregando...</h2> : <h2 class="carregados">Produtos carregados.</h2>}
+            {carregando ? <h2 className="carregando">Carregando...</h2> : <h2 className="carregados">Produtos carregados.</h2>}
 
             <ul>
                 {produtos.map((produto) => (
