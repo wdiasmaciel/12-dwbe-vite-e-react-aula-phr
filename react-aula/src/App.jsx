@@ -1,0 +1,32 @@
+import { useState } from 'react'
+
+/*
+ * Como existe um index.jsx em ./components/exemplo01/, 
+ * o Vite resolve esse arquivo automaticamente. 
+ * Assim, não é necessário informar index.jsx no import 
+ * a seguir:
+ */
+import Exemplo01 from './components/exemplo01/'
+
+import './App.css'
+
+function App() {
+  const [exemplo, setExemplo] = useState('inicio')
+
+  if (exemplo === 'exemplo01') {
+    return <Exemplo01 voltar={() => setExemplo('inicio')} />
+  }
+
+  return (
+    <>
+      <h1>Prática 11</h1>
+      <div className="container">
+        <button className="botao" type="button" onClick={() => setExemplo('exemplo01')}>
+          Exemplo 01
+        </button>
+      </div>
+    </>
+  )
+}
+
+export default App
