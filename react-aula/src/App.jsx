@@ -12,6 +12,7 @@ import Exemplo03 from './components/exemplo03/'
 import Exemplo04 from './components/exemplo04/'
 import Exemplo05 from './components/exemplo05/'
 import Exemplo06 from './components/exemplo06/'
+import Exemplo07 from './components/exemplo07/'
 
 import './App.css'
 
@@ -42,6 +43,10 @@ function App() {
     return <Exemplo06 voltar={() => setExemplo('inicio')} />
   }
 
+  if (exemplo === 'exemplo07') {
+    return <Exemplo07 voltar={() => setExemplo('inicio')} />
+  }
+
   return (
     <>
       <h1>Prática 11</h1>
@@ -63,6 +68,9 @@ function App() {
         </button>
         <button className="botao" type="button" onClick={() => setExemplo('exemplo06')}>
           Exemplo 06
+        </button>
+        <button className="botao" type="button" onClick={() => setExemplo('exemplo07')}>
+          Exemplo 07
         </button>
       </div>
     </>
