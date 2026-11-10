@@ -32,6 +32,9 @@ function App() {
         <button className="botao" type="button" onClick={() => setExemplo('exemplo02')}>
           Exemplo 02
         </button>
+        <button className="botao" type="button" onClick={() => setExemplo('exemplo03')}>
+          Exemplo 03
+        </button>
       </div>
     </>
   )

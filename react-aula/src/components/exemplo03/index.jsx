@@ -15,20 +15,17 @@ function Exemplo({ voltar }) {
             <button className="botao" type="button" onClick={voltar}>
                 Voltar para App
             </button>
-            <h1>Sistema de Produtos</h1>
+            
+            <h1>{contador}</h1>
+            
+            <button
+                onClick={() => setContador(contador + 1)}
+            >
+                Incrementar
+            </button>
             <p>
-                Sempre que o componente for renderizado (montado),
+                Sempre que o valor do contador for alterado,
                 a mensagem aparecerá no console.
-            </p>
-            <p>
-                Na maioria das aplicações, desejamos executar uma ação
-                somente quando o componente é criado (montado pela primeira vez).
-            </p>
-            <p>
-                Para isso, utilizamos um vetor de dependências vazio.
-            </p>
-            <p>
-                Isso indica ao React que o efeito será executado apenas uma vez.
             </p>
         </>
     );
@@ -36,19 +33,3 @@ function Exemplo({ voltar }) {
 }
 
 export default Exemplo;
-
-
-
-
-return (
-    <div>
-        <h1>{contador}</h1>
-        <button
-            onClick={() => setContador(contador + 1)}
-        >
-            Incrementar
-        </button>
-    </div>
-);
-}
-
