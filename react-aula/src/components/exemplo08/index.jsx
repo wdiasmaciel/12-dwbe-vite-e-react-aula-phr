@@ -53,8 +53,7 @@ function Exemplo({ voltar }) {
             </p>
 
             <p>
-                Sempre que uma delas mudar:
-                O efeito será executado.
+                Sempre que uma delas mudar: o efeito será executado.
             </p>
         </>
     );
