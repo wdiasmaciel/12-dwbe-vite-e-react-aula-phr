@@ -19,10 +19,10 @@ function Exemplo({ voltar }) {
             </p>
             <p>
                 Na maioria das aplicações, desejamos executar uma ação
-                somente quando o componente é criado.
+                somente quando o componente é criado (montado pela primeira vez).
             </p>
             <p>
-                Para isso utilizamos um vetor de dependências vazio.
+                Para isso, utilizamos um vetor de dependências vazio.
             </p>
         </>
     );

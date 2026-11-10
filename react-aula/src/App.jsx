@@ -7,6 +7,7 @@ import { useState } from 'react'
  * a seguir:
  */
 import Exemplo01 from './components/exemplo01/'
+import Exemplo02 from './components/exemplo02/'
 
 import './App.css'
 
@@ -17,12 +18,19 @@ function App() {
     return <Exemplo01 voltar={() => setExemplo('inicio')} />
   }
 
+  if (exemplo === 'exemplo02') {
+    return <Exemplo02 voltar={() => setExemplo('inicio')} />
+  }
+
   return (
     <>
       <h1>Prática 11</h1>
       <div className="container">
         <button className="botao" type="button" onClick={() => setExemplo('exemplo01')}>
           Exemplo 01
+        </button>
+        <button className="botao" type="button" onClick={() => setExemplo('exemplo02')}>
+          Exemplo 02
         </button>
       </div>
     </>
