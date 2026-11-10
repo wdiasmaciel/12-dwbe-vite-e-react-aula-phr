@@ -2,13 +2,15 @@ import { useState, useEffect } from "react";
 import "../../App.css";
 
 function Exemplo({ voltar }) {
-    const [nome, setNome] = useState('');
-    const [preco, setPreco] = useState(0);
-    const [estoque, setEstoque] = useState(0);
+    const [valor, setValor] = useState(0);
 
     useEffect(() => {
-        console.log("Alteração.");
-    }, [nome, preco, estoque]);
+        console.log("Valor: ", valor);
+        setValor(valor => valor + 1);
+        return () => {
+            console.log("Componente desmontado.");
+        }
+    }, [valor]);
 
     return (
         <>
@@ -18,42 +20,11 @@ function Exemplo({ voltar }) {
 
             <h1>Sistema de Produtos</h1>
 
-            <input
-                type="text"
-                placeholder="Nome do produto"
-                value={nome}
-                onChange={(e) => setNome(e.target.value)}
-            />
-
-            <input
-                type="number"
-                placeholder="Preço do produto"
-                value={preco}
-                onChange={(e) => setPreco(parseFloat(e.target.value))}
-            />
-
-            <input
-                type="number"
-                placeholder="Estoque do produto"
-                value={estoque}
-                onChange={(e) => setEstoque(parseInt(e.target.value))}
-            />
+            <h2 class="carregados">Valor: {valor}</h2>
 
             <p>
-                Sempre que o valor de qualquer campo for alterado,
-                a mensagem aparecerá no console.
-            </p>
-
-            <h2 class="carregados">Nome: {nome}</h2>
-            <h2 class="carregados">Preço: {preco}</h2>
-            <h2 class="carregados">Estoque: {estoque}</h2>
-
-            <p>
-                Também podemos observar diversas variáveis.
-            </p>
-
-            <p>
-                Sempre que uma delas mudar: o efeito será executado.
+                Entra em loop infinito, pois o valor é alterado dentro
+                do useEffect e está na lista de dependências.
             </p>
         </>
     );
