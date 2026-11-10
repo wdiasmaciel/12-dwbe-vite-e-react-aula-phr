@@ -31,7 +31,7 @@ function Exemplo({ voltar }) {
                 value={preco}
                 onChange={(e) => setPreco(parseFloat(e.target.value))}
             />
-            
+
             <input
                 type="number"
                 placeholder="Estoque do produto"
@@ -48,6 +48,14 @@ function Exemplo({ voltar }) {
             <h2 class="carregados">Preço: {preco}</h2>
             <h2 class="carregados">Estoque: {estoque}</h2>
 
+            <p>
+                Também podemos observar diversas variáveis.
+            </p>
+
+            <p>
+                Sempre que uma delas mudar:
+                O efeito será executado.
+            </p>
         </>
     );
 
