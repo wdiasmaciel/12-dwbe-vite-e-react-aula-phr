@@ -1,10 +1,9 @@
 import { useState } from 'react'
 
 /*
- * Como existe um index.jsx em ./components/exemplo01/, 
+ * Como existe um index.jsx dentro de cada exeplo (./components/exemplo0#/), 
  * o Vite resolve esse arquivo automaticamente. 
- * Assim, não é necessário informar index.jsx no import 
- * a seguir:
+ * Assim, não é necessário informar index.jsx nos imports a seguir:
  */
 import Exemplo01 from './components/exemplo01/'
 import Exemplo02 from './components/exemplo02/'
@@ -13,6 +12,7 @@ import Exemplo04 from './components/exemplo04/'
 import Exemplo05 from './components/exemplo05/'
 import Exemplo06 from './components/exemplo06/'
 import Exemplo07 from './components/exemplo07/'
+import Exemplo08 from './components/exemplo08/'
 
 import './App.css'
 
@@ -47,6 +47,10 @@ function App() {
     return <Exemplo07 voltar={() => setExemplo('inicio')} />
   }
 
+  if (exemplo === 'exemplo08') {
+    return <Exemplo08 voltar={() => setExemplo('inicio')} />
+  }
+
   return (
     <>
       <h1>Prática 11</h1>
@@ -71,6 +75,9 @@ function App() {
         </button>
         <button className="botao" type="button" onClick={() => setExemplo('exemplo07')}>
           Exemplo 07
+        </button>
+        <button className="botao" type="button" onClick={() => setExemplo('exemplo08')}>
+          Exemplo 08
         </button>
       </div>
     </>
