@@ -1,25 +1,24 @@
 import { useState, useEffect } from "react";
 
-function Exemplo({ voltar}) {
+// Simulando uma chamada API:
+async function fetchProdutos() {
+    setCarregando(true);
+    try {
+        const response = await fetch('/produtos.json');
+        const data = await response.json();
+        setProdutos(data.produtos);
+    } catch (error) {
+        console.error('Erro ao buscar produtos:', error);
+    } finally {
+        setCarregando(false);
+    }
+};
+
+function Exemplo({ voltar }) {
     const [produtos, setProdutos] = useState([]);
     const [carregando, setCarregando] = useState(true);
 
-
     useEffect(() => {
-        // Simulando uma chamada API:
-        const fetchProdutos = async () => {
-            setCarregando(true);
-            try {
-                const response = await fetch('/produtos.json');
-                const data = await response.json();
-                setProdutos(data.produtos);
-            } catch (error) {
-                console.error('Erro ao buscar produtos:', error);
-            } finally {
-                setCarregando(false);
-            }
-        };
-
         fetchProdutos();
     }, []);
 
