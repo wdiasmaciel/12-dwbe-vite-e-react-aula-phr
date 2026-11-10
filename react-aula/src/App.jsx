@@ -8,6 +8,7 @@ import { useState } from 'react'
  */
 import Exemplo01 from './components/exemplo01/'
 import Exemplo02 from './components/exemplo02/'
+import Exemplo03 from './components/exemplo03/'
 
 import './App.css'
 
@@ -20,6 +21,10 @@ function App() {
 
   if (exemplo === 'exemplo02') {
     return <Exemplo02 voltar={() => setExemplo('inicio')} />
+  }
+
+  if (exemplo === 'exemplo03') {
+    return <Exemplo03 voltar={() => setExemplo('inicio')} />
   }
 
   return (
