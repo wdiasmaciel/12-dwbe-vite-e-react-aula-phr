@@ -21,3 +21,11 @@
 .botao:hover {
   background-color: #535bf2;
 }
+
+.carregando {
+  color: red;
+}
+
+.carregados {
+  color: green;
+}
