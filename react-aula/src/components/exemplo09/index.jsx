@@ -6,6 +6,8 @@ function Exemplo({ voltar }) {
 
     useEffect(() => {
         console.log("Valor: ", valor);
+        // Atualização intencional para demonstrar o loop infinito.
+        // eslint-disable-next-line react-hooks/set-state-in-effect
         setValor(valor => valor + 1);
         return () => {
             console.log("Componente desmontado.");
@@ -20,7 +22,7 @@ function Exemplo({ voltar }) {
 
             <h1>Sistema de Produtos</h1>
 
-            <h2 class="carregados">Valor: {valor}</h2>
+            <h2 className="carregados">Valor: {valor}</h2>
 
             <p>
                 Entra em loop infinito, pois o valor é alterado dentro
@@ -37,45 +39,41 @@ function Exemplo({ voltar }) {
                 em re-renderizações (caso o array de dependências mude).
             </p>
 
-            <p>
-                O return do useEffect é executado em dois momentos:
-                <ol>
-                    <li>
-                        Ao desmontar o componente: é executado uma última vez para limpar
-                        recursos (como remover event listeners, cancelar requisições ou
-                        fechar conexões).
-                    </li>
-                    <li>
-                        Antes de uma nova execução do efeito (re-renderização com dependências):
-                        se você passou dependências (ex: [id]), toda vez que o valor de id mudar,
-                        o React faz o seguinte antes de rodar a nova versão do efeito:
-                        <ul>
-                            <li>Executa a função de return da versão anterior.</li>
-                            <li>Executa a nova função do useEffect.</li>
-                        </ul>
-                    </li>
-                </ol>
-            </p>
+            <p>O return do useEffect é executado em dois momentos:</p>
+            <ol>
+                <li>
+                    Ao desmontar o componente: é executado uma última vez para limpar
+                    recursos (como remover event listeners, cancelar requisições ou
+                    fechar conexões).
+                </li>
+                <li>
+                    Antes de uma nova execução do efeito (re-renderização com dependências):
+                    se você passou dependências (ex: [id]), toda vez que o valor de id mudar,
+                    o React faz o seguinte antes de rodar a nova versão do efeito:
+                    <ul>
+                        <li>Executa a função de return da versão anterior.</li>
+                        <li>Executa a nova função do useEffect.</li>
+                    </ul>
+                </li>
+            </ol>
 
-            <p>
-                Resumo:
-                <ul>
-                    <li>
-                        Sem array de segundo argumento (useEffect(() => {... })):
-                        o return roda a cada renderização do componente, logo antes
-                        do próximo efeito.
-                    </li>
-                    <li>
-                        Array vazio (useEffect(() => {... }, [])): o return só roda
-                        quando o componente é desmontado (já que o efeito principal
-                        só roda uma vez na montagem).
-                    </li>
-                    <li>Com dependências (useEffect(() => {... }, [valor])): o return
-                        roda quando o valor muda (antes do efeito rodar novamente) e
-                        quando o componente é desmontado.
-                    </li>
-                </ul>
-            </p>
+            <p>Resumo:</p>
+            <ul>
+                <li>
+                    Sem array de segundo argumento (useEffect(() =&gt; &#123;... &#125;)):
+                    o return roda a cada renderização do componente, logo antes
+                    do próximo efeito.
+                </li>
+                <li>
+                    Array vazio (useEffect(() =&gt; &#123;... &#125;, [])): o return só roda
+                    quando o componente é desmontado (já que o efeito principal
+                    só roda uma vez na montagem).
+                </li>
+                <li>Com dependências (useEffect(() =&gt; &#123;... &#125;, [valor])): o return
+                    roda quando o valor muda (antes do efeito rodar novamente) e
+                    quando o componente é desmontado.
+                </li>
+            </ul>
         </>
     );
 }
