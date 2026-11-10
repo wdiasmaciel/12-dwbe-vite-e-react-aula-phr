@@ -18,7 +18,7 @@ const lista = [
     }
 ];
 
-function Exemplo() {
+function Exemplo({ voltar}) {
     const [produtos, setProdutos] = useState([]);
     const [carregando, setCarregando] = useState(true);
 
